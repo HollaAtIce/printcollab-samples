@@ -1,0 +1,46 @@
+<div id="content" style="background-color: white">
+    <div class="container-image">
+        <div class="row">
+            <div class="col-md-6"><img src="https://s3-us-west-2.amazonaws.com/sabio-training/C26/1485883440938.jpg" alt="HTML5 Icon" width="578" height="300">
+            <div class="row">
+                <article {{vm.newCampaign}}>
+                    <h1 class="col-md-12" ng-style="CampaignDetailsCtrl.myHeader">
+                        {{CampaignDetailsCtrl.newCampaign.name}}
+                    </h1>
+                    </div>
+                </article>
+                <div class="row">
+                    <div>
+                        <p class="col-md-3"> price:</p>
+                        <p class="col-md-3"> paper type:</p>
+                        <p class="col-md-3"> size:</p>
+                        <p class="col-md-2"> status:</p>
+                    </div>
+                    <div>
+                        <p ng-style="CampaignDetailsCtrl.myThreeBottoms" class="col-md-3">${{CampaignDetailsCtrl.newCampaign.price}}</p>
+                        <p ng-style="CampaignDetailsCtrl.myThreeBottoms" class="col-md-3">{{CampaignDetailsCtrl.newCampaign.options.paper_type}}</p>
+                        <p ng-style="CampaignDetailsCtrl.myThreeBottoms" class="col-md-3">{{CampaignDetailsCtrl.newCampaign.options.size}}</p>
+                        <p class="col-md-2"><span class="center-block padding-4 label" ng-class="{'label-warning': CampaignDetailsCtrl.newCampaign.status == 'Active', 'label-primary': CampaignDetailsCtrl.newCampaign.status == 'Completed', 'label-success': CampaignDetailsCtrl.newCampaign.status == 'Shipping'}">{{CampaignDetailsCtrl.newCampaign.status}}</span></p>
+                    </div>
+                    <p class="col-md-12">{{CampaignDetailsCtrl.newCampaign.description}}</p>
+                    <div class="col-md-12">
+                        <p class="col-md-4"></p>
+                        <p class="col-md-5"></p>
+                        <p class="col-md-1">
+                            <a class="btn btn-default" ui-sref="app.campaigns.edit({id: CampaignDetailsCtrl.newCampaign._id})">Edit Campaign</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="col-md-3"></p>
+                <p class="col-md-6" ng-style="CampaignDetailsCtrl.prettyUpNumbers">{{CampaignDetailsCtrl.dateDifference}} left on campaign</p>
+                <p class="col-md-3"></p>
+                <canvas id="doughnut" style="display:inline-block; width: 523px; height: 261px;" class="chart chart-doughnut" chart-colors='CampaignDetailsCtrl.donutcolors' chart-data="CampaignDetailsCtrl.donutdata" chart-labels="CampaignDetailsCtrl.labels"></canvas>
+                <p class="col-md-3"></p>
+                <p class="col-md-6" ng-style="CampaignDetailsCtrl.prettyUpNumbers2">{{CampaignDetailsCtrl.newCampaign.orders.length | number}} of {{CampaignDetailsCtrl.newCampaign.target_orders | number}} orders sold</p>
+                <p class="col-md-3"></p>
+            </div>
+        </div>
+    </div>
+</div>
