@@ -1,38 +1,27 @@
 /* global angular */
 'use strict'
 
-angular.module('app.campaigns') //
-    .factory('CampaignsService', CampaignsServiceFactory) // whats this factory business?
+angular.module('app.campaigns')
+    .factory('CampaignsService', CampaignsServiceFactory)
 
 CampaignsServiceFactory.$inject = ['$http', 'StoreService']
 
 function CampaignsServiceFactory($http, StoreService) {
     return {
-        insert: insert,
-        getOne: getOne,
-        removeOne: removeOne,
-        updateOne: updateOne,
-        getAll: getAll,
-        getCountByCampaignId,
-        chargeCampaign
+       insert,
+       getOne,
+       removeOne,
+       updateOne,
+       getAll,
+       getCountByCampaignId,
+       chargeCampaign
     }
 
-    // charge campaigns
-    function chargeCampaign(campaignId, onSuccess, onError) {
-        return $http.get('/api/campaigns/' + campaignId + '/charge')
-            .then((response) => {
-                onSuccess(response.body)
-            })
-            .catch((response) => {
-                onError(response.body)
-            })
-    }
-
-    // post
-    function insert(data, onSuccess, onError) { // accepting two function as parameters... ,
+   
+    function insert(data, onSuccess, onError) {
         return $http.post('/api/campaigns/', data)
-            .then((response) => { // '.then run function 'onSuccess', once promis is resolved //returns $http. $http is angulars service that allows you to make ajax / xml calls ,  specifically  the .get
-                onSuccess(response.data) // send response data back to controller
+            .then((response) => { 
+                onSuccess(response.data)
                 var userId = response.data.item.user_id
                 StoreService.getStoreByUserId(userId, campaignSuccess, campaignError)
             })
