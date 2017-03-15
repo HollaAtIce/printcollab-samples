@@ -1,3 +1,5 @@
+// server side ctrl and call of service below (express!)...3/3 snippet of newsletter api work...
+
 const responses = require('../models/responses')
 const newsletterService = require('../services/newsletter.service')()
 
