@@ -1,3 +1,5 @@
+// ctrl i made for a newsletter api used on project
+
 /* global angular */
 angular.module('public.newsletter')
     .controller('NewsletterController', NewsletterController)
