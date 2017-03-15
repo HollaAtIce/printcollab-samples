@@ -1,3 +1,5 @@
+// the service for newsletter api, initally made all http methods but just post below
+
 /* global angular */
 angular.module('public.newsletter')
     .factory('NewsletterService', NewsletterService)
