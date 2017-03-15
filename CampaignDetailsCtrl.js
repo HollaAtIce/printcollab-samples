@@ -1,7 +1,9 @@
+// ctrl for the campaign details/progress page. included chart.js for doughnut on progress bar and neat color changes when %goal met
+
 /* global angular moment */
 'use strict'
 
-angular.module('app.campaigns') // changed app.campaigns ... to app.campaigns.create
+angular.module('app.campaigns')
     .controller('CampaignDetailsController', CampaignDetailsController)
 
 CampaignDetailsController.$inject = ['CampaignsService', '$controller', '$state']
