@@ -1,3 +1,4 @@
+// using standard js so no semicolons
 // ctrl i made for a newsletter api used on project
 
 /* global angular */
