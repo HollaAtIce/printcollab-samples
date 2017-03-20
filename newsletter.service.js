@@ -1,3 +1,6 @@
+ // using standard js so no semicolons
+//my server side service for mailchimp api
+
  module.exports = newsletterService
  const mailchimp = require('mailchimp-v3')
  const mailchimpList = process.env.MAILCHIMP_LIST
