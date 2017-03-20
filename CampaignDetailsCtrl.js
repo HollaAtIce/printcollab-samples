@@ -1,4 +1,6 @@
-// ctrl for the campaign details/progress page. included chart.js for doughnut on progress bar and neat color changes when %goal met
+/*using standard js so no semicolons
+ctrl for the campaign details/progress page. 
+line 65: included chart.js for doughnut on progress bar & neat color changes when goal met*/
 
 /* global angular moment */
 'use strict'
